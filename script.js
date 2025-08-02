@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
             messages.push("Username must be at least 3 characters long.");
         }
 
+        if (username == ""){
+            isValid = false;
+            messages.push("Username must not be empty")
+        }
+
         if (!email.includes('@') || !email.includes('.')) {
             isValid = false;
             messages.push("Email must contain '@' and '.'");
@@ -35,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackDiv.style.backgroundColor = "#d4edda";
         } else {
             feedbackDiv.innerHTML = messages.join("<br>");
-            feedbackDiv.style.color = "#d8000c";
+          feedbackDiv.style.color = "#dc3545";
             feedbackDiv.style.backgroundColor = "#ffbaba";
         }
     });
